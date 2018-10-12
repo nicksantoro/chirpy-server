@@ -27,7 +27,7 @@ const getUserById = (userId) => {
 const updateUserById = (id, payload) => {
     const user = userQuery.updateUserById(id, payload);
 
-    return content.then(result => (!result ? {error: 'error retrieving content', status: 500} : result))
+    return user.then(result => (!result ? {error: 'error retrieving content', status: 500} : result))
 }
 
 module.exports = {
