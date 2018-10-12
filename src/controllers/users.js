@@ -57,10 +57,35 @@ const updateUserById = (req, res, next) => {
         })
 }
 
+const getFollowers = (req, res, next) => {
+    let { id } = req.params;
+    const promise = model.getFollowers(id);
+
+    promise
+        .then(result => (result.error ? next(result) : res.status(200).json(result)))
+        .catch(error => {
+            next(error);
+        })
+}
+
+const deleteFollowers = (req, res, next) => {
+    let {followerId} = req.body;
+    let { id } = req.params;
+    const promise = model.deleteFollowers( followerId, id );
+
+    promise.then(result => (result.error ? next(result) : res.status(200).json(result)));
+
+    promise.catch(error => {
+        next(error);
+    });
+}
+
 module.exports = {
     getAllUsers,
     createUser,
     deleteUser,
     getUserById,
-    updateUserById
+    updateUserById,
+    getFollowers,
+    deleteFollowers
 }

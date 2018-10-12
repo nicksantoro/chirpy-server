@@ -10,24 +10,35 @@ const getAllUsers = () => {
 
 const createUser = (payload) => {
     const user = userQuery.createUser(payload);
-    return content.then(result => (!result ? {error: 'error retrieving content', status: 500} : result))
+    return content.then(result => (!result ? {error: 'error creating user', status: 500} : result))
 }
 
 const deleteUser = (userId) => {
     const user = userQuery.deleteUser(userId);
-    return user.then(result => (!result ? {error: 'error retrieving content', status: 500} : result))
+    return user.then(result => (!result ? {error: 'error deleting user', status: 500} : result))
 }
 
 const getUserById = (userId) => {
     const user = userQuery.getUserById(userId);
   
-    return user.then(result => (!result ? {error: 'error retrieving content', status: 500} : result))
+    return user.then(result => (!result ? {error: 'error retrieving user', status: 500} : result))
 }
 
 const updateUserById = (id, payload) => {
     const user = userQuery.updateUserById(id, payload);
 
-    return user.then(result => (!result ? {error: 'error retrieving content', status: 500} : result))
+    return user.then(result => (!result ? {error: 'error updating user', status: 500} : result))
+}
+
+const getFollowers = (id) => {
+    const user = userQuery.getFollowers(id);
+  
+    return user.then(result => (!result ? {error: 'error retrieving followers', status: 500} : result))
+}
+
+const deleteFollowers = (followerId, followeeId) => {
+    const user = userQuery.deleteFollowers(followerId, followeeId);
+    return user.then(result => (!result ? {error: 'error deleting follower', status: 500} : result))
 }
 
 module.exports = {
@@ -35,5 +46,7 @@ module.exports = {
     createUser,
     deleteUser,
     getUserById,
-    updateUserById
+    updateUserById,
+    getFollowers,
+    deleteFollowers
 }

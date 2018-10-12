@@ -11,8 +11,11 @@ router.delete('/:userId', ctrl.deleteUser);
 
 router.get('/:contentId', ctrl.getUserById);
 
-router.put('/:id', ctrl.updateUserById)
+router.put('/:id', ctrl.updateUserById);
 
+router.get('/:id/followers', ctrl.getFollowers);
+
+router.delete('/:id/followers', ctrl.deleteFollowers);
 
 
 module.exports = router;
