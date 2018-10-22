@@ -11,7 +11,7 @@ router.delete('/:userId', ctrl.deleteContent);
 
 router.get('/:contentId', ctrl.getContentById);
 
-router.put('/:id', ctrl.updateContentById)
+router.put('/:id', ctrl.updateContentById);
 
 
 
