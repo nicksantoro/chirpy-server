@@ -10,7 +10,7 @@ exports.seed = function(knex, Promise) {
           first_name: 'Nick',
           last_name: 'Santoro',
           email: 'santoro.nick@gmail.com',
-          profile_name: 'profile_name1',
+          profile_name: 'nicksantoro',
           password: 'password',
           city: 'san francisco'
         },
@@ -19,7 +19,7 @@ exports.seed = function(knex, Promise) {
           first_name: 'Sam',
           last_name: 'Santoro',
           email: 'santoro.sam@gmail.com',
-          profile_name: 'profile_name2',
+          profile_name: 'sam3000',
           password: 'password',
           city: 'oakland'
         },
@@ -28,7 +28,7 @@ exports.seed = function(knex, Promise) {
           first_name: 'June',
           last_name: 'Santoro',
           email: 'santoro.june@gmail.com',
-          profile_name: 'profile_name3',
+          profile_name: 'juneebug',
           password: 'password',
           city: 'oakland'
         },
@@ -37,7 +37,7 @@ exports.seed = function(knex, Promise) {
           first_name: 'Alexis',
           last_name: 'Santoro',
           email: 'santoro.alexis@gmail.com',
-          profile_name: 'profile_name4',
+          profile_name: 'shadow-warriork',
           password: 'password',
           city: 'san francisco'
         }

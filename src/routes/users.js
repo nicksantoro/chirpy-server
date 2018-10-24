@@ -17,5 +17,6 @@ router.get('/:id/followers', ctrl.getFollowers);
 
 router.delete('/:id/followers', ctrl.deleteFollowers);
 
+router.post('/login', ctrl.login);
 
 module.exports = router;

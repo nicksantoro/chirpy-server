@@ -41,6 +41,11 @@ const deleteFollowers = (followerId, followeeId) => {
     return user.then(result => (!result ? {error: 'error deleting follower', status: 500} : result))
 }
 
+const login = (email, password) => {
+    const user = userQuery.login(email, password);
+    return user.then(result => (!result ? {error: 'error deleting follower', status: 500} : result));
+}
+
 module.exports = {
     getAllUsers,
     createUser,
@@ -48,5 +53,6 @@ module.exports = {
     getUserById,
     updateUserById,
     getFollowers,
-    deleteFollowers
+    deleteFollowers,
+    login
 }

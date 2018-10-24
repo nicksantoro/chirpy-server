@@ -80,6 +80,19 @@ const deleteFollowers = (req, res, next) => {
     });
 }
 
+const login = (req, res, next) => {
+    console.log("REQ BBODY", req.body);
+    let { email, password } = req.body;
+
+    const promise = model.login(email, password);
+    promise.then( result => {
+        return (result.error ? next(result) : res.status(200).json(result))
+    })
+    .catch( error => {
+        next(error);
+    })
+}
+//val user
 module.exports = {
     getAllUsers,
     createUser,
@@ -87,5 +100,6 @@ module.exports = {
     getUserById,
     updateUserById,
     getFollowers,
-    deleteFollowers
+    deleteFollowers,
+    login
 }

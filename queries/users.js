@@ -48,6 +48,13 @@ const deleteFollowers = (followerId, followeeId) => {
     .where('followee_id', followeeId)
 }
 
+const login = (email, password) => {
+  console.log(email, password);
+  return knex('users')
+    .where('email', email)
+    .where('password', password)
+}
+
 module.exports = {
   getAllUsers,
   createUser,
@@ -55,5 +62,6 @@ module.exports = {
   getUserById,
   updateUserById,
   getFollowers,
-  deleteFollowers
+  deleteFollowers,
+  login
 }
