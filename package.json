@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test mocha --exit"
   },
   "repository": {
     "type": "git",
@@ -20,9 +20,12 @@
   "homepage": "https://github.com/nicksantoro/chirpy-server#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "knex": "^0.15.2",
+    "mocha": "^5.2.0",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.5",
     "pg": "^7.5.0"
